@@ -1,0 +1,36 @@
+<div class="container">
+  <div>
+    <h2>Update Quiz:</h2>
+  </div>
+  <form >
+    <div  class="col-sm-2 col-md-2 col-lg-2">
+      <label >Id_Quiz</label>
+      <input readonly type="text" [(ngModel)]="currentQuiz.iddQuiz" name="iddQuiz" class="form-control">
+    </div>
+    <div class="col-sm-2 col-md-2 col-lg-2">
+      <label >quiz_name</label>
+      <input type="text" [(ngModel)]= "currentQuiz.quizName" name="quizName" class="form-control">
+    </div>
+    <div class="col-sm-2 col-md-2 col-lg-2">
+      <label >question_number</label>
+      <input type="number"[(ngModel)]= "currentQuiz.questionNumber" name="questionNumber" class="form-control">
+    </div>
+    <div class="col-sm-2 col-md-2 col-lg-2">
+      <label >quiz_date</label>
+      <input type="Date" [(ngModel)]= "currentQuiz.quizDate" name="quizDate" class="form-control">
+    </div>
+    <form>
+      <label >Choose a Difficulty :</label>
+      <select [(ngModel)]= "currentQuiz.difficulty" name="difficulty">
+        <option value="BEGINNER">BEGINNER</option>
+        <option value="INTERMEDIATE">INTERMEDIATE</option>
+        <option value="HARD">HARD</option>
+      </select>
+    </form>
+    <div class="mt-2">
+      <button type="submit" (click)="updateQuiz()" class="btn btn-success">Update</button>
+    </div>
+  </form>
+</div>
+
+

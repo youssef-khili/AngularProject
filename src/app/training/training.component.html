@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="card shadow mb-4">
+    <div class="card-body">
+      <h1 style="color: green;font-size-adjust: revert">List of trainings</h1>
+      <nav class="navbar">
+      <input class="form-control" type="text" name="trainingName" [(ngModel)]="trainingName" (ngModelChange)="Search()"
+      placeholder="Enter training name">
+      </nav>
+      <table class="table table-striped ">
+        <thead>
+        <tr> <th (click)="sort('idTraining')">Id_training&nbsp;<i class="fa fa-sort"></i></th><th>certificat</th><th>cost</th> <th>training_name</th> <th>trainingType</th> <th>sessionStartDate</th><th>sessionEndDate</th><th>maximumParticipantNumber</th></tr>
+        </thead>
+        <tbody *ngFor="let training of trainings | orderBy: key: reverse | paginate:{itemsPerPage:5,currentPage:p};">
+        <tr>
+          <th scope="row">{{training.idTraining}}</th>
+          <td>{{training.certificat}}</td>
+          <td>{{training.cost}}</td>
+          <td>{{training.trainingName}}</td>
+          <td>{{training.trainingType}}</td>
+          <td>{{training.sessionStartDate}}</td>
+          <td>{{training.sessionEndDate}}</td>
+          <td>{{training.maximumParticipantNumber}}</td>
+          <td><button class="btn btn-success" [routerLink]="['/home/training/updateTraining',training.idTraining]">Update</button></td>
+          <td><button class="btn btn-danger" (click)="DeleteTraining(training)" >Delete</button></td>
+        </tr>
+        </tbody>
+        <pagination-controls (pageChange)="p= $event"></pagination-controls>
+      </table>
+    </div>
+  </div>
+</div>
+

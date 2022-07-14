@@ -1,0 +1,39 @@
+<div class="container">
+  <div>
+    <h2>Add Quiz :</h2>
+  </div>
+
+  <form >
+
+
+    <div >
+      <label >quiz_name</label>
+      <input type="text" [(ngModel)]= "newQuiz.quizName" name="quizName" class="form-control">
+    </div>
+
+    <div >
+      <label >question_Number</label>
+      <input type="number"[(ngModel)]= "newQuiz.questionNumber" name="cost" class="form-control">
+    </div>
+    <div>
+      <label > quiz_Date</label>
+      <input type="Date" [(ngModel)]= "newQuiz.quizDate" name="quizDate" class="form-control">
+    </div>
+    <form>
+      <label >Choose a difficulty:</label>
+      <select [(ngModel)]= "newQuiz.difficulty" name="difficulty">
+        <option value="BEGINNER">BEGINNER</option>
+        <option value="INTERMEDIATE">INTERMEDIATE</option>
+        <option value="HARD">HARD</option>
+      </select>
+    </form>
+
+
+    <button type="submit" (click)="addQuiz()" class="btn btn-success">Add</button>
+    <div>
+      <h3>{{ messagee }}</h3>
+    </div>
+  </form>
+</div>
+
+

@@ -1,0 +1,38 @@
+<div class="container">
+  <div>
+    <h2>Add Offer :</h2>
+  </div>
+
+  <form >
+
+
+    <div >
+      <label >offer price</label>
+      <input type="number"[(ngModel)]= "newOffer.offerPrice" name="offer price" class="form-control">
+    </div>
+
+    <div>
+      <label >offer start Date</label>
+      <input type="Date" [(ngModel)]= "newOffer.offerStartDate" name="offerStartDate" class="form-control">
+    </div>
+    <div>
+      <label >interviewDate</label>
+      <input type="Date" [(ngModel)]= "newOffer.interviewDate" name="interviewDate" class="form-control">
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4" >
+      <label >Profession</label>
+      <select class="form-control" name="role" id="role" [(ngModel)]="newOffer.profession">
+      <option value=""></option>
+      <option value="DOCTOR">DOCTOR</option>
+      <option value="STUDENT">STUDENT</option>
+      <option value="ENGINEER">ENGINEER</option>
+      <option value="PROFESSOR">PROFESSOR</option>
+      </select>
+    </div>
+
+    <button type="submit" (click)="addOffer()" class="btn btn-success">Ajouter</button>
+    <div>
+      <h3>{{ message }}</h3>
+    </div>
+  </form>
+</div>

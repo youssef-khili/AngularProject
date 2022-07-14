@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="card shadow mb-4">
+    <div class="card-body">
+      <h1 style="color: green;font-size-adjust: revert">List of quiz</h1>
+      <table class="table table-striped ">
+        <thead>
+        <tr> <th>iddQuiz</th><th>quizName</th><th>questionNumber</th> <th>quizDate</th> <th>difficulty</th></tr>
+        </thead>
+        <tbody *ngFor="let quiz of quiz">
+        <tr>
+          <th scope="row">{{quiz.iddQuiz}}</th>
+          <td>{{quiz.quizName}}</td>
+          <td>{{quiz.questionNumber}}</td>
+          <td>{{quiz.quizDate}}</td>
+          <td>{{quiz.difficulty}}</td>
+          <td><button class="btn btn-danger" (click)="DeleteQuiz(quiz)" >Delete</button></td>
+          <td><button class="btn btn-success" [routerLink]="['/home/quiz/updateQuiz',quiz.iddQuiz]">Update</button></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+

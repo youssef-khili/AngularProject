@@ -1,0 +1,49 @@
+<div class="container">
+  <div>
+    <h2>Update Offer :</h2>
+  </div>
+
+  <form >
+
+
+    <div  >
+      <label >offer price</label>
+      <input type="number"[(ngModel)]= "currentOffer.offerPrice" name="offerPrice" class="form-control">
+    </div>
+    <div >
+      <label >start date </label>
+      <input type="date"
+             [ngModel]= "currentOffer.offerStartDate | date: 'yyyy-MM-dd'"
+             (ngModelChange)=" currentOffer.offerStartDate= $event"
+             name="startDate" class="form-control">
+    </div>
+    <div >
+      <label >interview Date </label>
+      <input type="date"
+             [ngModel]= "currentOffer.interviewDate | date: 'yyyy-MM-dd'"
+             (ngModelChange)=" currentOffer.interviewDate= $event"
+             name="interviewDate" class="form-control">
+    </div>
+
+    <div class="col-sm-4 col-md-4 col-lg-4" >
+      <label >Profession</label>
+      <select class="form-control" name="role" id="role" [(ngModel)]="currentOffer.profession">
+      <option value=""></option>
+      <option value="DOCTOR">DOCTOR</option>
+      <option value="STUDENT">STUDENT</option>
+      <option value="ENGINEER">ENGINEER</option>
+      <option value="PROFESSOR">PROFESSOR</option>
+      </select>
+    </div>
+
+
+
+
+    <div >
+      <button type="submit" (click)="updateOffer()" class="btn btn-success">Modifier</button>
+
+    </div>
+  </form>
+</div>
+
+

@@ -1,0 +1,54 @@
+<div class="container">
+  <div>
+    <h2>Add Training :</h2>
+  </div>
+
+  <form >
+
+
+    <div >
+      <label >training_name</label>
+      <input type="text" [(ngModel)]= "newTraining.trainingName" name="trainingName" class="form-control">
+    </div>
+
+    <div >
+      <label >cost</label>
+      <input type="number"[(ngModel)]= "newTraining.cost" name="cost" class="form-control">
+    </div>
+    <div>
+      <label >training_start_Date</label>
+      <input type="Date" [(ngModel)]= "newTraining.sessionStartDate" name="sessionStartDate" class="form-control">
+    </div>
+    <div>
+      <label >training_end_Date</label>
+      <input type="Date" [(ngModel)]= "newTraining.sessionEndDate" name="sessionEndDate" class="form-control">
+    </div>
+    <div >
+      <label >maximum_participant_number</label>
+      <input type="text"[(ngModel)]= "newTraining.maximumParticipantNumber" name="maximumParticipantNumber" class="form-control">
+    </div>
+    <form>
+      <label >Choose a Training type:</label>
+      <select [(ngModel)]= "newTraining.trainingType" name="trainingType">
+        <option value="CAB">CAB</option>
+        <option value="BTS">BTS</option>
+        <option value="BTP">BTP</option>
+      </select>
+    </form>
+    <form>
+      <label >Choose a Certificate type:</label>
+      <select [(ngModel)]= "newTraining.certificat" name="certificat">
+        <option value="BRONZE">BRONZE</option>
+        <option value="SILVER">SILVER</option>
+        <option value="GOLD">GOLD</option>
+      </select>
+    </form>
+
+
+    <button type="submit" (click)="addTraining()" class="btn btn-success">Ajouter</button>
+    <div>
+      <h3>{{ message }}</h3>
+    </div>
+  </form>
+</div>
+

@@ -1,0 +1,54 @@
+<div class="container">
+  <div>
+    <h2>Update training :</h2>
+  </div>
+  <form >
+    <div  class="col-sm-2 col-md-2 col-lg-2">
+      <label >Id_Training</label>
+      <input readonly type="text" [(ngModel)]="currentTraining.idTraining" name="idTraining" class="form-control">
+    </div>
+    <div class="col-sm-2 col-md-2 col-lg-2">
+      <label >training_name</label>
+      <input type="text" [(ngModel)]= "currentTraining.trainingName" name="trainingName" class="form-control">
+    </div>
+    <div class="col-sm-2 col-md-2 col-lg-2">
+      <label >cost</label>
+      <input type="number"[(ngModel)]= "currentTraining.cost" name="cost" class="form-control">
+    </div>
+    <div class="col-sm-2 col-md-2 col-lg-2">
+      <label >training_start_Date</label>
+      <input type="Date" [(ngModel)]= "currentTraining.sessionStartDate" name="sessionStartDate" class="form-control">
+    </div>
+    <div class="col-sm-2 col-md-2 col-lg-2">
+      <label >training_end_Date</label>
+      <input type="Date" [(ngModel)]= "currentTraining.sessionEndDate" name="sessionEndDate" class="form-control">
+    </div>
+    <div class="col-sm-2 col-md-2 col-lg-2">
+      <label >maximum_participant_number</label>
+      <input type="text"[(ngModel)]= "currentTraining.maximumParticipantNumber" name="maximumParticipantNumber" class="form-control">
+    </div>
+    <form>
+      <label >Choose a Training type:</label>
+      <select [(ngModel)]= "currentTraining.trainingType" name="trainingType">
+        <option value="CAB">CAB</option>
+        <option value="BTS">BTS</option>
+        <option value="BTP">BTP</option>
+      </select>
+    </form>
+    <form>
+      <div class="col-sm-4 col-md-4 col-lg-4" >
+        <label >Level</label>
+        <select class="form-control" name="role" id="role" [(ngModel)]="currentTraining.certificat">
+          <option value=""></option>
+          <option value="BRONZE">BRONZE</option>
+          <option value="SILVER">SILVER</option>
+          <option value="GOLD">GOLD</option>
+          <option value="DIAMOND">DIAMOND</option>
+        </select>
+      </div>
+    </form>
+    <div class="mt-2">
+      <button type="submit" (click)="updateTraining()" class="btn btn-success">Update</button>
+    </div>
+  </form>
+</div>
